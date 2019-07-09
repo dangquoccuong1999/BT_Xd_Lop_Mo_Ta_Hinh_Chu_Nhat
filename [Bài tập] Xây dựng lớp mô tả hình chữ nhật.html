@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="myCanvas" width="1000px" height="600px" style="border:1px solid #d3d3d3;"></canvas>
+
+<script>
+    let Rectangle = function (chieuDai, chieuRong) {
+        this.chieuDai = chieuDai;
+        this.chieuRong = chieuRong;
+
+        this.tinhDienTich = function () {
+            return this.chieuDai * this.chieuRong;
+        };
+        this.tinhChuVi = function () {
+            return (this.chieuDai + this.chieuRong) * 2;
+        };
+    }
+
+    function createRectangle() {
+        let ctx = document.getElementById('myCanvas').getContext('2d');
+        let hinhChuNhat = new Rectangle(200, 100);
+        ctx.beginPath();
+        ctx.rect(50, 50,hinhChuNhat.chieuDai, hinhChuNhat.chieuRong);
+        ctx.fillStyle = "#FF0000";
+        ctx.fill();
+    }
+    createRectangle();
+
+</script>
+</body>
+</html>
